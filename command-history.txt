@@ -4,3 +4,4 @@ npx husky-init && npm install
 npm install --save-dev lint-staged
 npm install --save-dev cspell
 npm install --save-dev --save-exact prettier
+npx storybook init
