@@ -1,1 +1,9 @@
 npx create-next-app@latest --typescript
+gh repo create
+npx husky-init && npm install
+npm install --save-dev lint-staged
+npm install --save-dev cspell
+npm install --save-dev --save-exact prettier
+npx storybook init
+# https://nextjs.org/docs/testing#setting-up-jest-with-the-rust-compiler
+npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
