@@ -2,3 +2,4 @@ npx create-next-app@latest --typescript
 gh repo create
 npx husky-init && npm install
 npm install --save-dev lint-staged
+npm install --save-dev cspell
