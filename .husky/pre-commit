@@ -8,4 +8,5 @@ if [ "$CURRENT_BRANCH" = "main" ]; then
     exit 1
 fi
 
+npx lint-staged
 npm run lint
