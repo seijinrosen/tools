@@ -8,5 +8,7 @@ module.exports = {
   framework: "@storybook/react",
   core: {
     builder: "@storybook/builder-webpack5",
+    // https://storybook.js.org/docs/react/configure/telemetry#how-to-opt-out
+    disableTelemetry: true,
   },
 };
