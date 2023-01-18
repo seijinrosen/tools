@@ -5,6 +5,7 @@ words:
   - jsdom
   - mediumdark
   - rgba
+  - shellcheck
   - stackalt
   - vercel
   - Viewports
