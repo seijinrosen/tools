@@ -1,7 +1,9 @@
+import { Heading } from "@chakra-ui/react";
+
 const HelloWorld = () => {
   return (
     <>
-      <h1>Hello World!</h1>
+      <Heading>Hello World!</Heading>
     </>
   );
 };
