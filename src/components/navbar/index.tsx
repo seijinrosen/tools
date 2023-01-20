@@ -14,10 +14,13 @@ function Navbar() {
           <Link href="/">Home</Link>
         </li>
         <li>
+          <Link href="/clipboard">clipboard</Link>
+        </li>
+        <li>
           <Link href="/hello-page">hello-page</Link>
         </li>
         <li>
-          <Link href="/clipboard">clipboard</Link>
+          <Link href="/nextjs">nextjs</Link>
         </li>
       </ul>
       <Button onClick={toggleColorMode}>
