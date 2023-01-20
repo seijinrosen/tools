@@ -4,6 +4,7 @@
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Container,
   Flex,
   IconButton,
   Stack,
@@ -24,30 +25,32 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box as="header" bg={useColorModeValue("gray.100", "gray.900")} px={4}>
-      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        <IconButton
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={"Open Menu"}
-          onClick={isOpen ? onClose : onOpen}
-        />
-        <Box>
-          <Link href="/">tools</Link>
-        </Box>
-        <ColorToggleButton />
-      </Flex>
+    <Box as="header" bg={useColorModeValue("gray.100", "gray.900")}>
+      <Container maxW="container.md">
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+          <IconButton
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            onClick={isOpen ? onClose : onOpen}
+          />
+          <Box>
+            <Link href="/">tools</Link>
+          </Box>
+          <ColorToggleButton />
+        </Flex>
 
-      {isOpen ? (
-        <Stack as={"nav"} spacing={4}>
-          <ul>
-            {links.map((link, i) => (
-              <li key={i}>
-                <Link href={link.href}>{link.title}</Link>
-              </li>
-            ))}
-          </ul>
-        </Stack>
-      ) : null}
+        {isOpen ? (
+          <Stack as={"nav"} spacing={4}>
+            <ul>
+              {links.map((link, i) => (
+                <li key={i}>
+                  <Link href={link.href}>{link.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </Stack>
+        ) : null}
+      </Container>
     </Box>
   );
 };
