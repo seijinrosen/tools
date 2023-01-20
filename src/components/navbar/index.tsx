@@ -13,6 +13,13 @@ import {
 import Link from "next/link";
 import ColorToggleButton from "../ColorToggleButton";
 
+const links: { href: string; title: string }[] = [
+  { href: "/", title: "Home" },
+  { href: "/clipboard", title: "clipboard" },
+  { href: "/hello-page", title: "hello-page" },
+  { href: "/nextjs", title: "nextjs" },
+];
+
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -31,18 +38,11 @@ const Navbar = () => {
       {isOpen ? (
         <Stack as={"nav"} spacing={4}>
           <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/clipboard">clipboard</Link>
-            </li>
-            <li>
-              <Link href="/hello-page">hello-page</Link>
-            </li>
-            <li>
-              <Link href="/nextjs">nextjs</Link>
-            </li>
+            {links.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href}>{link.title}</Link>
+              </li>
+            ))}
           </ul>
         </Stack>
       ) : null}
