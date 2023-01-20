@@ -8,3 +8,4 @@ npx storybook init
 # https://nextjs.org/docs/testing#setting-up-jest-with-the-rust-compiler
 npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm i @chakra-ui/icons
