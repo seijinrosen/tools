@@ -1,3 +1,5 @@
+ignorePaths:
+  - src/components/LoremIpsum/index.tsx
 words:
   - callout
   - chakra
