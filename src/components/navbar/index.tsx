@@ -1,12 +1,9 @@
 // https://nextjs.org/docs/api-reference/next/link
-// https://chakra-ui.com/docs/styled-system/color-mode#usecolormode
 
-import { Button, useColorMode } from "@chakra-ui/react";
 import Link from "next/link";
+import ColorToggleButton from "../ColorToggleButton";
 
 function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <header>
       <ul>
@@ -23,9 +20,7 @@ function Navbar() {
           <Link href="/nextjs">nextjs</Link>
         </li>
       </ul>
-      <Button onClick={toggleColorMode}>
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
+      <ColorToggleButton />
     </header>
   );
 }
