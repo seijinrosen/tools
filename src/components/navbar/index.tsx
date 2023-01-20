@@ -31,7 +31,9 @@ const Navbar = () => {
           aria-label={"Open Menu"}
           onClick={isOpen ? onClose : onOpen}
         />
-        <Box>tools</Box>
+        <Box>
+          <Link href="/">tools</Link>
+        </Box>
         <ColorToggleButton />
       </Flex>
 
