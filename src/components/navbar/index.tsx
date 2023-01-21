@@ -18,6 +18,7 @@ const links: { href: string; title: string }[] = [
   { href: "/", title: "Home" },
   { href: "/clipboard", title: "clipboard" },
   { href: "/hello-page", title: "hello-page" },
+  { href: "/man-nansai", title: "満何歳？" },
   { href: "/nextjs", title: "nextjs" },
 ];
 
