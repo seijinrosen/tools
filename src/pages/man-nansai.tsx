@@ -38,7 +38,7 @@ const ManNansaiPage = () => {
       </Text>
 
       <Input
-        placeholder="Select Date and Time"
+        placeholder="Select your birthday"
         type="date"
         value={birthdayString}
         onChange={(e) => handleChange(e.target.value)}
