@@ -1,5 +1,6 @@
 // https://chakra-ui.com/docs/hooks/use-clipboard
 
+import ContentLayout from "@/components/ContentLayout";
 import {
   Button,
   Editable,
@@ -10,12 +11,14 @@ import {
   useClipboard,
 } from "@chakra-ui/react";
 
+const title = "Clipboard";
+
 function ClipboardPage() {
   const placeholder = "text to be copied...";
   const { onCopy, value, setValue, hasCopied } = useClipboard("");
 
   return (
-    <>
+    <ContentLayout title={title}>
       <Flex mb={2}>
         <Input
           placeholder={placeholder}
@@ -31,7 +34,7 @@ function ClipboardPage() {
         <EditablePreview width="100%" />
         <EditableInput />
       </Editable>
-    </>
+    </ContentLayout>
   );
 }
 

@@ -1,9 +1,12 @@
 // https://chakra-ui.com/docs/components/input#input-methods-other-than-text
 
+import ContentLayout from "@/components/ContentLayout";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Heading, Input, Link, Text } from "@chakra-ui/react";
+import { Input, Link, Text } from "@chakra-ui/react";
 import { format } from "date-fns";
 import { useState } from "react";
+
+const title = "満何歳？";
 
 const calcManNenrei = (today: Date, birthday: Date) => {
   const yearDiff = today.getFullYear() - birthday.getFullYear();
@@ -21,9 +24,7 @@ const ManNansaiPage = () => {
     setBirthday(new Date(dateString));
 
   return (
-    <>
-      <Heading mb={12}>満何歳？</Heading>
-
+    <ContentLayout title={title}>
       <Text mb={12}>
         今日は {format(today, "yyyy 年 M 月 d 日")} ですので、
       </Text>
@@ -46,7 +47,7 @@ const ManNansaiPage = () => {
       <Link href="https://keisan.casio.jp/exec/system/1233283157" isExternal>
         いま（当時）、何歳？ - 高精度計算サイト <ExternalLinkIcon mx="2px" />
       </Link>
-    </>
+    </ContentLayout>
   );
 };
 

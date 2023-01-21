@@ -1,13 +1,17 @@
-import Head from "next/head";
+import ContentLayout from "@/components/ContentLayout";
+import Link from "next/link";
+
+const title = "Home";
 
 const Home = () => {
   return (
-    <>
-      <Head>
-        <title>Home | tools</title>
-      </Head>
-      <main>ホーム</main>
-    </>
+    <ContentLayout title={title}>
+      <ul>
+        <li>
+          <Link href="/man-nansai">満何歳？</Link>
+        </li>
+      </ul>
+    </ContentLayout>
   );
 };
 
