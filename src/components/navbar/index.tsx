@@ -1,30 +1,59 @@
 // https://nextjs.org/docs/api-reference/next/link
-// https://chakra-ui.com/docs/styled-system/color-mode#usecolormode
+// https://chakra-templates.dev/navigation/navbar
 
-import { Button, useColorMode } from "@chakra-ui/react";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Container,
+  Flex,
+  IconButton,
+  Stack,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
 import Link from "next/link";
+import ColorToggleButton from "../ColorToggleButton";
 
-function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
+const links: { href: string; title: string }[] = [
+  { href: "/", title: "Home" },
+  { href: "/clipboard", title: "clipboard" },
+  { href: "/hello-page", title: "hello-page" },
+  { href: "/man-nansai", title: "満何歳？" },
+  { href: "/nextjs", title: "nextjs" },
+];
+
+const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <header>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/hello-page">hello-page</Link>
-        </li>
-        <li>
-          <Link href="/clipboard">clipboard</Link>
-        </li>
-      </ul>
-      <Button onClick={toggleColorMode}>
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
-    </header>
+    <Box as="header" bg={useColorModeValue("gray.100", "gray.900")}>
+      <Container maxW="container.md">
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+          <IconButton
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            onClick={isOpen ? onClose : onOpen}
+          />
+          <Box>
+            <Link href="/">tools</Link>
+          </Box>
+          <ColorToggleButton />
+        </Flex>
+
+        {isOpen ? (
+          <Stack as={"nav"} spacing={4}>
+            <ul>
+              {links.map((link, i) => (
+                <li key={i}>
+                  <Link href={link.href}>{link.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </Stack>
+        ) : null}
+      </Container>
+    </Box>
   );
-}
+};
 
 export default Navbar;
