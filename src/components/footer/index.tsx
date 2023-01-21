@@ -1,4 +1,4 @@
-import { Link, Stack, Text, VStack } from "@chakra-ui/react";
+import { IconButton, Link, Stack, Text, VStack } from "@chakra-ui/react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
@@ -6,10 +6,18 @@ const Footer = () => {
     <VStack as="footer" mt="auto" mb={12}>
       <Stack mt={4} direction="row" spacing={6}>
         <Link href="https://github.com/seijinrosen/tools" isExternal>
-          <FaGithub fontSize={20} />
+          <IconButton
+            aria-label="GitHub link"
+            icon={<FaGithub fontSize={20} />}
+            isRound
+          />
         </Link>
         <Link href="https://twitter.com/seijinrosen" isExternal>
-          <FaTwitter fontSize={20} color="#1DA1F2" />
+          <IconButton
+            aria-label="Twitter link"
+            icon={<FaTwitter fontSize={20} color="#1DA1F2" />}
+            isRound
+          />
         </Link>
       </Stack>
       <Text>
