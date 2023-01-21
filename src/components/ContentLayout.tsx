@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Divider, Heading } from "@chakra-ui/react";
 import Head from "next/head";
 
 type ContentLayoutProps = {
@@ -12,7 +12,8 @@ const ContentLayout = ({ title, children }: ContentLayoutProps) => {
       <Head>
         <title>{title} | tools</title>
       </Head>
-      <Heading mb={12}>{title}</Heading>
+      <Heading mb={1}>{title}</Heading>
+      <Divider mb={12} />
       {children}
     </>
   );
