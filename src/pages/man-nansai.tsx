@@ -3,12 +3,15 @@
 import ContentLayout from "@/components/ContentLayout";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Input, Link, Text } from "@chakra-ui/react";
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import { useState } from "react";
 
 const title = "満何歳？";
+const today = new Date();
+const defaultDate = new Date(2000, 0, 1);
 
-const calcManNenrei = (today: Date, birthday: Date) => {
+const calcManNenrei = (today: Date, birthdayString: string) => {
+  const birthday = parse(birthdayString, "yyyy-MM-dd", new Date());
   const yearDiff = today.getFullYear() - birthday.getFullYear();
   if (today.getMonth() < birthday.getMonth()) return yearDiff - 1;
   if (today.getMonth() > birthday.getMonth()) return yearDiff;
@@ -17,11 +20,16 @@ const calcManNenrei = (today: Date, birthday: Date) => {
 };
 
 const ManNansaiPage = () => {
-  const today = new Date();
-  const [birthday, setBirthday] = useState(new Date(2000, 0, 1));
+  const [birthdayString, setBirthdayString] = useState(
+    format(defaultDate, "yyyy-MM-dd")
+  );
 
-  const handleChange = (dateString: string) =>
-    setBirthday(new Date(dateString));
+  const handleChange = (dateString: string) => {
+    try {
+      const formattedDateString = format(new Date(dateString), "yyyy-MM-dd");
+      setBirthdayString(formattedDateString);
+    } catch (error) {}
+  };
 
   return (
     <ContentLayout title={title}>
@@ -32,11 +40,11 @@ const ManNansaiPage = () => {
       <Input
         placeholder="Select Date and Time"
         type="date"
-        value={format(birthday, "yyyy-MM-dd")}
+        value={birthdayString}
         onChange={(e) => handleChange(e.target.value)}
       />
       <Text mt={1}>
-        生まれのあなたは、満 {calcManNenrei(today, birthday)} 歳です。
+        生まれのあなたは、満 {calcManNenrei(today, birthdayString)} 歳です。
       </Text>
 
       <Text mt={12} mb={6}>
