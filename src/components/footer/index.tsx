@@ -1,4 +1,5 @@
 import {
+  Icon,
   IconButton,
   Link,
   Stack,
@@ -18,7 +19,7 @@ const Footer = () => {
           <IconButton
             aria-label="GitHub link"
             bg={bgColor}
-            icon={<FaGithub fontSize={20} />}
+            icon={<Icon as={FaGithub} />}
             isRound
           />
         </Link>
@@ -26,7 +27,8 @@ const Footer = () => {
           <IconButton
             aria-label="Twitter link"
             bg={bgColor}
-            icon={<FaTwitter fontSize={20} color="#1DA1F2" />}
+            color="#1DA1F2"
+            icon={<Icon as={FaTwitter} />}
             isRound
           />
         </Link>
