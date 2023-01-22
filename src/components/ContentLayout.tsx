@@ -7,10 +7,12 @@ type ContentLayoutProps = {
 };
 
 const ContentLayout = ({ title, children }: ContentLayoutProps) => {
+  const fullTitle = `${title} | tools`;
+
   return (
     <>
       <Head>
-        <title>{title} | tools</title>
+        <title>{fullTitle}</title>
       </Head>
       <Heading mb={1}>{title}</Heading>
       <Divider mb={12} />

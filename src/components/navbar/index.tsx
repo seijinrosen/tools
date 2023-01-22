@@ -30,6 +30,7 @@ const Navbar = () => {
       <Container maxW="container.md">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
+            bg={useColorModeValue("gray.100", "gray.900")}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
             onClick={isOpen ? onClose : onOpen}
