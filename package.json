@@ -38,7 +38,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@storybook/addon-actions": "^6.5.15",
-    "@storybook/addon-essentials": "^8.5.2",
+    "@storybook/addon-essentials": "^8.6.3",
     "@storybook/addon-interactions": "^8.4.6",
     "@storybook/addon-links": "^7.5.2",
     "@storybook/builder-webpack5": "^7.5.2",
